@@ -54,6 +54,13 @@ if [[ ! -d dep_packages ]]; then
     unzip "dep_packages.zip" && rm "dep_packages.zip" && rm "__MACOSX"
 fi
 
+# download aux_file.
+cd ${DIR_TMP}/data
+if [[ ! -d vocab_cache ]]; then
+    wget -O "aux_file.zip" "https://www.dropbox.com/s/yrecf582rqtgke0/aux_file.zip?dl=0"
+    unzip "aux_file.zip" && rm "aux_file.zip" && rm "__MACOSX"
+fi
+
 # download saved model
 cd ${DIR_TMP}
 if [[ ! -d saved_models ]]; then
@@ -84,6 +91,18 @@ if [[ ! -d saved_sselector ]]; then
     unzip "saved_sselector.zip" && rm "saved_sselector.zip" && rm "__MACOSX"
 fi
 
+cd ${DIR_TMP}
+if [[ ! -d results ]]; then
+    mkdir results
+fi
+
+cd ${DIR_TMP}/results
+if [[ ! -d chaonan99 ]]; then
+    wget -O "chaonan99.zip" "https://www.dropbox.com/s/pu3h5xc2kpws0n2/chaonan99.zip?dl=0"
+    unzip "chaonan99.zip" && rm "chaonan99.zip" && rm "__MACOSX"
+fi
+
+echo "Data Downloading Completed"
 
 # https://www.dropbox.com/s/rc3zbq8cefhcckg/saved_nli_m.zip?dl=0
 # https://www.dropbox.com/s/hj4zv3k5lzek9yr/nn_doc_selector.zip?dl=0
