@@ -12,6 +12,9 @@ This repository provides the implementation for the paper [Combining Fact Extrac
 * fire
 * inflection
 
+Try to install the package as the order above.
+Previous version of pytorch can be find at [legacy pytorch](https://pytorch.org/get-started/previous-versions/).
+
 ## Preparation
 1. Setup the python environment and download the required package listed above.
 2. Run the preparation script.
