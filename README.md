@@ -9,6 +9,23 @@ This repository provides the implementation for the paper [Combining Fact Extrac
 * wget
 * tqdm
 
+## Preparation
+1. Setup the python environment and download the required package listed above.
+2. Run the preparation script.
+```bash
+source setup.sh
+bash ./scripts/prepare.sh
+```
+The script will download all the required data, the auxiliary packages and files.
+After preparation, your project folder should be similar to the one below.
+```bash
+# Coming.
+```
+
+(More coming...)
+## More coming...
+
+
 ## Citation
 If you find this implementation helpful, please consider citing:
 ```
