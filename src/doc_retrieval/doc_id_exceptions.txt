@@ -1,0 +1,39 @@
+['Sunn', 'O', '-RRB-', '-RRB-', '-RRB-']
+Sunn O)))
+
+['L', '-LRB-', 'a']
+l)a
+
+['Anata', 'ni', 'Smile', '-', 'COLON', '-', '-RRB-']
+Anata ni Smile :)
+
+['Oracle', '-LRB-', 'Sunn', 'O', '-RRB-', '-RRB-', '-RRB-', 'album', '-RRB-']
+Oracle (Sunn O))) album)
+
+['Free', 'Drugs', ';', '-', '-RRB-']
+Free Drugs ;-)
+
+['Vinay', 'Kumar', '-LRB-', 'academician']
+Vinay Kumar (academician)
+
+['Pre', '-RRB-', 'Thing']
+Pre)thing
+
+['Lol-COLON', '--', '-RRB-']
+Lol:-)
+
+['SPO-COLON', '-', '-RRB-']
+SPO:)
+
+['Life-COLON', '-', '-RRB-']
+life:)
+
+['Great', 'Indian', 'Bustard', 'Sanctuary', '-RRB-']
+Great Indian Bustard Sanctuary)
+
+# This is a problem
+['Mill', 'Creek', '-LRB-', 'Black', 'River']
+Mill Creek (Black River)
+
+
+

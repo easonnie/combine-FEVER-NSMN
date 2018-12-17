@@ -1,0 +1,17 @@
+inflection
+numpy
+scipy
+scikit-learn
+nltk
+tqdm
+termcolor
+regex
+prettytable
+pexpect==4.2.1
+torch
+torchvision
+flashtext
+requests
+wget
+ipython
+tornado

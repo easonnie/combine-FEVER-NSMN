@@ -54,11 +54,3 @@ if [[ ! -d dep_packages ]]; then
     mv "dep_packages.zip?dl=0" "dep_packages.zip"
     unzip "dep_packages.zip" && rm "dep_packages.zip" && rm "__MACOSX"
 fi
-
-
-
-
-# FEVER dev: https://s3-eu-west-1.amazonaws.com/fever.public/shared_task_dev.jsonl
-# FEVER test: https://s3-eu-west-1.amazonaws.com/fever.public/shared_task_test.jsonl
-# FEVER train: https://s3-eu-west-1.amazonaws.com/fever.public/train.jsonl
-# WIKI pages: https://s3-eu-west-1.amazonaws.com/fever.public/wiki-pages.zip
