@@ -1274,7 +1274,7 @@ def pipeline_first_sent_selection(org_t_file, upstream_in_file, model_save_path,
     model.display()
     model.to(device)
 
-    eval_iter = dev_biterator(dev_instances, shuffle=False, num_epochs=1, cuda_device=device_num)
+    eval_iter = dev_biterator(dev_instances, shuffle=False, num_epochs=1)
     dev_sent_full_list = hidden_eval(model, eval_iter, complete_upstream_dev_data)
 
     return dev_sent_full_list

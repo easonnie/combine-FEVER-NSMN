@@ -166,11 +166,11 @@ class Model(nn.Module):
         return s1_glove_embd, s1_elmo_embd['elmo_representations'][0], s1_len
 
     def forward(self, batch):
-        s1_tokens = batch['premise']['tokens']
-        s1_elmo_chars = batch['premise']['elmo_chars']
+        s1_tokens = batch['premise']['tokens'].to(next(self.parameters()).device)
+        s1_elmo_chars = batch['premise']['elmo_chars'].to(next(self.parameters()).device)
 
-        s2_tokens = batch['hypothesis']['tokens']
-        s2_elmo_chars = batch['hypothesis']['elmo_chars']
+        s2_tokens = batch['hypothesis']['tokens'].to(next(self.parameters()).device)
+        s2_elmo_chars = batch['hypothesis']['elmo_chars'].to(next(self.parameters()).device)
 
         s1_glove_embd, s1_elmo_embd, s1_len = self.raw_input_to_esim_input(s1_tokens, s1_elmo_chars)
         s2_glove_embd, s2_elmo_embd, s2_len = self.raw_input_to_esim_input(s2_tokens, s2_elmo_chars)
@@ -357,15 +357,15 @@ def train_fever():
 
     vocab, weight_dict = load_vocab_embeddings(config.DATA_ROOT / "vocab_cache" / "nli_basic")
     # THis is important
-    vocab.add_token_to_namespace("true", namespace="selection_labels")
-    vocab.add_token_to_namespace("false", namespace="selection_labels")
-    vocab.add_token_to_namespace("hidden", namespace="selection_labels")
-    vocab.change_token_with_index_to_namespace("hidden", -2, namespace='selection_labels')
+    vocab.add_token_to_namespace("true", namespace="labels")
+    vocab.add_token_to_namespace("false", namespace="labels")
+    vocab.add_token_to_namespace("hidden", namespace="labels")
+    vocab.change_token_with_index_to_namespace("hidden", -2, namespace='labels')
     # Label value
 
-    vocab.get_index_to_token_vocabulary('selection_labels')
+    vocab.get_index_to_token_vocabulary('labels')
 
-    print(vocab.get_token_to_index_vocabulary('selection_labels'))
+    print(vocab.get_token_to_index_vocabulary('labels'))
     print(vocab.get_vocab_size('tokens'))
 
     biterator.index_with(vocab)
@@ -763,7 +763,7 @@ def pipeline_function(upstream_file, model_path):
     model.display()
     model.to(device)
 
-    eval_iter = dev_biterator(dev_instances, shuffle=False, num_epochs=1, cuda_device=device_num)
+    eval_iter = dev_biterator(dev_instances, shuffle=False, num_epochs=1)
     complete_upstream_dev_data = hidden_eval(model, eval_iter, complete_upstream_dev_data)
     # common.save_jsonl(complete_upstream_dev_data,
     #                   "/home/easonnie/projects/FunEver/saved_models/08-26-15:46:10_simple_nn_doc_first_sent/ablation_neural_doc.jsonl")

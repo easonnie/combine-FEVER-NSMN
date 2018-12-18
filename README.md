@@ -83,9 +83,11 @@ saved_models
 └── saved_sselector
 ```
 
-(More coming...)
-## More coming...
-Instruction for running the pipeline system.
+## Automatic pipeline procedure.
+Running the pipeline system on the dev set with the code below:
+```bash
+python src/pipeline/auto_pipeline.py
+```
 
 ## Citation
 If you find this implementation helpful, please consider citing:

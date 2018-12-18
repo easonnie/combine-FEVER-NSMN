@@ -72,7 +72,7 @@ class SSelectorReader(DatasetReader):
         fields['hypothesis'] = TextField(hypothesis_tokens, self._token_indexers)
 
         if label:
-            fields['selection_label'] = LabelField(label, label_namespace='labels')
+            fields['selection_label'] = LabelField(label, label_namespace='selection_labels')
 
         if pid:
             fields['pid'] = IdField(pid)

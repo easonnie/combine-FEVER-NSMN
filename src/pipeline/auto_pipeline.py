@@ -30,12 +30,13 @@ default_model_path_dict: Dict[str, str] = {
     'sselector_2': config.PRO_ROOT / 'saved_models/saved_sselector/i(58915)_epoch(7)_(tra_score:0.8838383838383839|raw_acc:1.0|pr:0.39771352135209675|rec:0.8257575757575758|f1:0.5368577222846761)_epoch',
 
     'nn_doc_selector': config.PRO_ROOT / 'saved_models/nn_doc_selector/i(9000)_epoch(1)_(tra_score:0.9212421242124212|pr:0.4299679967996279|rec:0.8818631863186318|f1:0.5780819247968391)',
-    'no_doc_nli': config.PRO_ROOT / 'saved_models/saved_v1_2/i(77000)_epoch(11)_dev(0.6601160116011601)_loss(1.1138329989302813)_seed(12)',
+    'no_doc_nli': config.PRO_ROOT / 'saved_models/saved_nli_m/i(77000)_epoch(11)_dev(0.6601160116011601)_loss(1.1138329989302813)_seed(12)',
 
-    'no_doc_nli_1': config.PRO_ROOT / 'saved_models/saved_v1_2/i(74000)_epoch(11)_dev(0.6546654665466547)_loss(1.3616722218274284)_seed(12)',
-    'no_doc_nli_2': config.PRO_ROOT / 'saved_models/saved_v1_2/i(85500)_epoch(13)_dev(0.6588658865886589)_loss(1.6495013034442674)_seed(12)',
-    'no_doc_nli_3': config.PRO_ROOT / 'saved_models/saved_v1_2/i(85500)_epoch(13)_dev(0.6578657865786579)_loss(1.7740270915371452)_seed(12)',
-    'no_doc_nli_4': config.PRO_ROOT / 'saved_models/saved_v1_2/i(77000)_epoch(11)_dev(0.6552155215521552)_loss(1.5343008287871691)_seed(12)',
+
+    # 'no_doc_nli_1': config.PRO_ROOT / 'saved_models/saved_v1_2/i(74000)_epoch(11)_dev(0.6546654665466547)_loss(1.3616722218274284)_seed(12)',
+    # 'no_doc_nli_2': config.PRO_ROOT / 'saved_models/saved_v1_2/i(85500)_epoch(13)_dev(0.6588658865886589)_loss(1.6495013034442674)_seed(12)',
+    # 'no_doc_nli_3': config.PRO_ROOT / 'saved_models/saved_v1_2/i(85500)_epoch(13)_dev(0.6578657865786579)_loss(1.7740270915371452)_seed(12)',
+    # 'no_doc_nli_4': config.PRO_ROOT / 'saved_models/saved_v1_2/i(77000)_epoch(11)_dev(0.6552155215521552)_loss(1.5343008287871691)_seed(12)',
 
     # 'nli_1': config.PRO_ROOT / 'saved_models/saved_v1_2/i(74000)_epoch(11)_dev(0.6546654665466547)_loss(1.3616722218274284)_seed(12)',
     # 'nli_2': config.PRO_ROOT / 'saved_models/saved_v1_2/i(85500)_epoch(13)_dev(0.6588658865886589)_loss(1.6495013034442674)_seed(12)',
@@ -112,8 +113,8 @@ default_steps = {
     },
 
     's2.2.1doc_nn_retri': {
-        'do': False,
-        'out_file': config.RESULT_PATH / "pipeline_r_aaai_doc/2018_09_02_17:11:42_r/nn_doc_list_1_shared_task_dev.jsonl"
+        'do': True,
+        'out_file': 'None'
     },
 
     's3.1sen_select': {
@@ -124,16 +125,14 @@ default_steps = {
 
     's4.2doc_retri': {
         'do': True,
-        'out_file': config.RESULT_PATH / "pipeline_r_aaai_doc/2018_09_02_17:11:42_r/doc_retr_2_shared_task_dev.jsonl"
+        'out_file': 'None'
     },
     's5.2sen_select': {
         'do': True,
-        'out_file': config.RESULT_PATH / "pipeline_r_aaai_doc/2018_09_02_17:11:42_r/dev_sent_score_2_shared_task_dev.jsonl"
+        'out_file': 'NOne'
     },
     's6.nli': {
         'do': True,
-        # 'out_file': config.RESULT_PATH / "pipeline_r_aaai_doc/2018_09_02_17:11:42_r/nli_r_shared_task_dev.jsonl"
-        # 'out_file': config.RESULT_PATH / "pipeline_r_aaai_doc/2018_09_02_17:11:42_r/nli_r_shared_task_dev_scale:0.5.jsonl"
         'out_file': config.RESULT_PATH / "pipeline_r_aaai_doc/2018_09_02_17:11:42_r/nli_r_shared_task_dev_no_doc_scale:0.05.jsonl"
     }
 }
@@ -467,10 +466,10 @@ def pipeline(in_file, eval_file=None,
     # #                                                                                 sentence_retri_2_scale_prob,
     # #                                                                                 top_n=5,
     # #                                                                                 add_n=sent_retri_2_top_k)
-    # # nli_results = nli.mesim_wn_simi_v1_2.pipeline_nli_run(tokenized_file,
-    # #                                                       sent_select_results_list_1,
-    # #                                                       [dev_sent_file_1, dev_sent_file_2],
-    # #                                                       model_path_dict['nli'], with_probs=True, with_logits=True)
+    # nli_results = nli.mesim_wn_simi_v1_2.pipeline_nli_run(tokenized_file,
+    #                                                       sent_select_results_list_1,
+    #                                                       [dev_sent_file_1, dev_sent_file_2],
+    #                                                       model_path_dict['nli'], with_probs=True, with_logits=True)
     #
     # # nli_results = nli.mesim_wn_simi_v1_2.pipeline_nli_run_bigger(tokenized_file,
     # #                                                       sent_select_results_list_1,
@@ -504,31 +503,31 @@ def pipeline(in_file, eval_file=None,
     # #
     # nli_results = merge_nli_results([nli_r_e0, nli_r_e1, nli_r_e2, nli_r_e3, nli_r_e4])
 
-    # print("Post Processing enhancement")
-    # delete_unused_evidence(nli_results)
-    # print("Deleting Useless Evidence")
+    print("Post Processing enhancement")
+    delete_unused_evidence(nli_results)
+    print("Deleting Useless Evidence")
     #
     # dev_sent_list_1 = common.load_jsonl(dev_sent_file_1)
     # dev_sent_list_2 = common.load_jsonl(dev_sent_file_2)
     #
-    # print("Appending 1 of second Evidence")
-    # nli_results = simi_sampler.threshold_sampler_insure_unique_merge(nli_results,
-    #                                                                  dev_sent_list_2,
-    #                                                                  sentence_retri_2_scale_prob,
-    #                                                                  top_n=5,
-    #                                                                  add_n=sent_retri_2_top_k)
-    # delete_unused_evidence(nli_results)
-    # #
-    # # High tolerance enhancement!
-    # print("Final High Tolerance Enhancement")
-    # print("Appending all of first Evidence")
-    # nli_results = simi_sampler.threshold_sampler_insure_unique_merge(nli_results,
-    #                                                                  dev_sent_list_1,
-    #                                                                  enhance_retri_1_scale_prob,
-    #                                                                  top_n=100,
-    #                                                                  add_n=100)
+    print("Appending 1 of second Evidence")
+    nli_results = simi_sampler.threshold_sampler_insure_unique_merge(nli_results,
+                                                                     dev_sent_list_2,
+                                                                     sentence_retri_2_scale_prob,
+                                                                     top_n=5,
+                                                                     add_n=sent_retri_2_top_k)
+    delete_unused_evidence(nli_results)
+    #
+    # High tolerance enhancement!
+    print("Final High Tolerance Enhancement")
+    print("Appending all of first Evidence")
+    nli_results = simi_sampler.threshold_sampler_insure_unique_merge(nli_results,
+                                                                     dev_sent_list_1,
+                                                                     enhance_retri_1_scale_prob,
+                                                                     top_n=100,
+                                                                     add_n=100)
 
-    # delete_unused_evidence(nli_results)
+    delete_unused_evidence(nli_results)
 
     eval_mode = {'standard': True}
     for item in nli_results:
