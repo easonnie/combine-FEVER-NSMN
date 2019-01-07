@@ -1,5 +1,5 @@
 # Combine-FEVER-NSMN
-This repository provides the implementation for the paper [Combining Fact Extraction and Verification with Neural Semantic Matching Networks](https://arxiv.org/abs/1811.07039).
+This repository provides the implementation for the paper [Combining Fact Extraction and Verification with Neural Semantic Matching Networks](https://arxiv.org/abs/1811.07039)(AAAI 2019 and EMNLP-FEVER Shared Task Rank-1 System).
 
 ## Requirement
 * Python 3.6
