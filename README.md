@@ -88,13 +88,15 @@ Running the pipeline system on the dev set with the code below:
 ```bash
 python src/pipeline/auto_pipeline.py
 ```
+Note that this pipeline is the (SotA) model in the AAAI paper. 
+For EMNLP-FEVER Shared Task version, please refer to `src/nli/mesim_wn_simi_v1_3.py` and `src/pipeline/pipeline_process.py`.
 
 ## Citation
 If you find this implementation helpful, please consider citing:
 ```
-@inproceedings{nie2018combining,
+@inproceedings{nie2019combining,
   title={Combining Fact Extraction and Verification with Neural Semantic Matching Networks},
-  author={Nie, Yixin and Chen, Haonan and Bansal, Mohit},
+  author={Yixin Nie and Haonan Chen and Mohit Bansal},
   booktitle={Association for the Advancement of Artificial Intelligence ({AAAI})},
   year={2019}
 }
