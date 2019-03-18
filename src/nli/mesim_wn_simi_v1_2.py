@@ -171,13 +171,13 @@ class Model(nn.Module):
         return s1_glove_embd, s1_elmo_embd['elmo_representations'][0], s1_wn_feature, s1_len
 
     def forward(self, batch):
-        s1_tokens = batch['premise']['tokens']
-        s1_elmo_chars = batch['premise']['elmo_chars']
-        s1_wn_f_vector = batch['p_wn_feature']
+        s1_tokens = batch['premise']['tokens'].to(next(self.parameters()).device)
+        s1_elmo_chars = batch['premise']['elmo_chars'].to(next(self.parameters()).device)
+        s1_wn_f_vector = batch['p_wn_feature'].to(next(self.parameters()).device)
 
-        s2_tokens = batch['hypothesis']['tokens']
-        s2_elmo_chars = batch['hypothesis']['elmo_chars']
-        s2_wn_f_vector = batch['h_wn_feature']
+        s2_tokens = batch['hypothesis']['tokens'].to(next(self.parameters()).device)
+        s2_elmo_chars = batch['hypothesis']['elmo_chars'].to(next(self.parameters()).device)
+        s2_wn_f_vector = batch['h_wn_feature'].to(next(self.parameters()).device)
 
         s1_glove_embd, s1_elmo_embd, s1_wn_f_vector, s1_len = self.raw_input_to_esim_input(
             s1_tokens, s1_elmo_chars, s1_wn_f_vector)
@@ -2215,7 +2215,7 @@ def pipeline_nli_run(t_org_file, upstream_dev_data_list, upstream_sent_file_list
     model.display()
     model.to(device)
 
-    eval_iter = biterator(dev_instances, shuffle=False, num_epochs=1, cuda_device=device_num)
+    eval_iter = biterator(dev_instances, shuffle=False, num_epochs=1)
     complete_upstream_dev_data = hidden_eval(model, eval_iter, complete_upstream_dev_data,
                                              with_logits=with_logits,
                                              with_probs=with_probs)
