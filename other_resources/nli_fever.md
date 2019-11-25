@@ -12,10 +12,10 @@ Each data point in the original FEVER dataset is a textual claim paired with a l
 For examples with support and refute labels in the training set and dev set, ground truth location of the evidence in the Wikipedia is also provided.  
 (Please refer to [the original paper](https://arxiv.org/abs/1803.05355) for details)
 
-## What is the difference between the original FEVER and this file?
-In the original FEVER setting, the input is a claim and the Wikipedia and the expected output is a label. 
-However, this is different from the standard NLI formalization which is basically a *pair-of-sequence to label* problem.
-To facilitate NLI-related research take advantage of the FEVER dataset, we pair the claims in the FEVER dataset with **textual evidence** and make it a *pair-of-sequence to label* formatted dataset.
+## What is the difference between the original FEVER and this data?
+In the original FEVER setting, the input is a claim and the Wikipedia, and the expected output is a label. 
+However, this is different from the standard NLI formalization which is basically a **pair-of-sequence to label** problem.
+To facilitate NLI-related research take advantage of the FEVER dataset, we pair the claims in the FEVER dataset with **textual evidence** and make it a **pair-of-sequence to label** formatted dataset.
 
 ## How is the pairing implemented?
 We first applied evidence selection using the method in previous [SOTA fact-checking system](https://arxiv.org/abs/1811.07039) such that each claim will have a collection of potential evidential sentences.
