@@ -7,7 +7,8 @@ The dataset is used together with [**SNLI**](https://nlp.stanford.edu/projects/s
 
 ## What is the Original FEVER dataset?
 Each data point in the original FEVER dataset is a textual claim paired with a label (support / refute / not enough information) depending on whether the claim can be verified by the Wikipedia.
-For examples with support and refute labels in the training set and dev set, ground truth location of the evidence in the Wikipedia is also provided. (Please refer to [the original paper](https://arxiv.org/abs/1803.05355) for details)
+For examples with support and refute labels in the training set and dev set, ground truth location of the evidence in the Wikipedia is also provided.  
+(Please refer to [the original paper](https://arxiv.org/abs/1803.05355) for details)
 
 ## What is the difference between the original FEVER and this file?
 In the original FEVER setting, the input is a claim and the Wikipedia and the expected output is a label. 

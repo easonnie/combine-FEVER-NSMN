@@ -92,7 +92,7 @@ Note that this pipeline is the (SotA) model in the AAAI paper.
 For EMNLP-FEVER Shared Task version, please refer to `src/nli/mesim_wn_simi_v1_3.py` and `src/pipeline/pipeline_process.py`.
 
 ## Other Resources
-The repo also comes with a NLI style FEVER dataset, facilitate the NLI-focused research in making use of the original FEVER dataset.
+To facilitate the NLI-focused research in making use of the original FEVER dataset, the repo also comes with **a NLI style FEVER dataset**, 
 More information can be found in [nli_fever](https://github.com/easonnie/combine-FEVER-NSMN/blob/master/other_resources/nli_fever.md).
 
 ## Citation
