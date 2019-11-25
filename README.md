@@ -93,7 +93,7 @@ For EMNLP-FEVER Shared Task version, please refer to `src/nli/mesim_wn_simi_v1_3
 
 ## Other Resources
 The repo also comes with a NLI style FEVER dataset, facilitate the NLI-focused research in making use of the original FEVER dataset.
-More information can be found in [nli_fever](https://github.com/easonnie/combine-FEVER-NSMN/blob/master/src/other_resources/nli_fever.md).
+More information can be found in [nli_fever](https://github.com/easonnie/combine-FEVER-NSMN/blob/master/other_resources/nli_fever.md).
 
 ## Citation
 If you find this implementation helpful, please consider citing:
