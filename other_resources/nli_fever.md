@@ -15,7 +15,7 @@ For examples with support and refute labels in the training set and dev set, gro
 ## What is the difference between the original FEVER and this data?
 In the original FEVER setting, the input is a claim and the Wikipedia, and the expected output is a label. 
 However, this is different from the standard NLI formalization which is basically a **pair-of-sequence to label** problem.
-To facilitate NLI-related research take advantage of the FEVER dataset, we pair the claims in the FEVER dataset with **textual evidence** and make it a **pair-of-sequence to label** formatted dataset.
+To facilitate NLI-related research in taking advantage of the FEVER dataset, we pair the claims in the FEVER dataset with **textual evidence** and make it a **pair-of-sequence to label** formatted dataset.
 
 ## How is the pairing implemented?
 We first applied evidence selection using the method in previous [SOTA fact-checking system](https://arxiv.org/abs/1811.07039) such that each claim will have a collection of potential evidential sentences.
@@ -27,7 +27,7 @@ This can help the final NLI model be adaptive to the noisy upstream evidence.
 
 ## What is the format?
 The train/dev/test data are contained in the three jsonl files. 
-The `query` and `context` field correspond to `premise` and `hypothesis` and the `SUPPORT`, `REFUTE`, and `NOT ENOUGH INFO` labels correspond to `ENTAILMENT', `CONTRADICT', and `NEUTRAL` label, respectively, in typical NLI settings.
+The `query` and `context` field correspond to `premise` and `hypothesis` and the `SUPPORT`, `REFUTE`, and `NOT ENOUGH INFO` labels correspond to `ENTAILMENT`, `CONTRADICT`, and `NEUTRAL` label, respectively, in the typical NLI settings.
 The `cid` can be mapped back the original FEVER `id` field. (The labels for both dev and test are hidden but you can retrieve the label for dev using the cid and the original FEVER data.)
 Finally, you can train your NLI model using this data and get FEVER verification label results. The label accuracy on dev and test will be comparable to the previous fact-checking works and you can submit your entries to [FEVER CodaLab Leaderboard](https://competitions.codalab.org/competitions/18814#results) to report test results.
 
