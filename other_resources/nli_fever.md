@@ -1,4 +1,4 @@
-# NLI style FEVER
+# NLI Style FEVER
  
 ## Download Link
 Link: [NLI style FEVER dataset](https://www.dropbox.com/s/hylbuaovqwo2zav/nli_fever.zip?dl=0).
