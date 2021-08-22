@@ -22,9 +22,9 @@ class GoogleQuerier(object):
     @classmethod
     def google_it(cls, keyword):
         quest_str = keyword.lower().replace(' ', '+')
-        page = requests.get(f"https://www.google.com/search?q={quest_str}+wiki")
+        page = requests.get(f"http://www.google.com/search?q={quest_str}+wiki")
         # from IPython import embed; embed();
-        matched_docid = re.search(r'(?<=https://en\.wikipedia\.org/wiki/)'\
+        matched_docid = re.search(r'(?<=http://en\.wikipedia\.org/wiki/)'\
                                   r'.+?&amp',
                                   page.text)
         return None if matched_docid is None else matched_docid[0][:-4]
