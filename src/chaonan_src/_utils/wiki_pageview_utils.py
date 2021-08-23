@@ -18,7 +18,7 @@ __author__ = ['chaonan99']
 
 
 save_path_root = "/playpen2/home/.chaonan99/data/wikimedia/"
-link_path_root = "https://dumps.wikimedia.org/other/"
+link_path_root = "http://dumps.wikimedia.org/other/"
 
 def get_file_name(month, day, hour):
     return f"pageviews/2018/2018-{month:02d}/pageviews-2018" \

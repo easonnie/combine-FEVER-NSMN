@@ -13,7 +13,7 @@ __author__ = ['chaonan99']
 
 def get_nltk_freq_words():
     """Use Brown corpus frequent words
-    More corpora: https://www.nltk.org/book/ch02.html
+    More corpora: http://www.nltk.org/book/ch02.html
     """
     freq_dict = nltk.FreqDist(brown.words())
 

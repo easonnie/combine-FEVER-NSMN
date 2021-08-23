@@ -42,7 +42,7 @@ class MappingMode(Enum):
 class _NamespaceDependentDefaultDict(defaultdict):
     """
     This is a `defaultdict
-    <https://docs.python.org/2/library/collections.html#collections.defaultdict>`_ where the
+    <http://docs.python.org/2/library/collections.html#collections.defaultdict>`_ where the
     default value is dependent on the key that is passed.
 
     We use "namespaces" in the :class:`Vocabulary` object to keep track of several different

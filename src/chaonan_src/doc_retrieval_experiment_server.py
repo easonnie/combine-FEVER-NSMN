@@ -8,7 +8,7 @@ from __future__ import print_function, division
 
 import json
 
-import tornado.httpserver
+import tornado.httperver
 import tornado.ioloop
 import tornado.web
 import tornado.websocket
@@ -75,7 +75,7 @@ def main():
     application.item_rb = item_rb
     print("Application started! Ready to receive doc retrieval requests!")
 
-    http_server = tornado.httpserver.HTTPServer(application)
+    http_server = tornado.httperver.HTTPServer(application)
     http_server.listen(9199)
     tornado.ioloop.IOLoop.instance().start()
 
